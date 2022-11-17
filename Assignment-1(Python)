@@ -49,46 +49,94 @@ No , we can nt use keywords as a variable . Beacause keyword is reserved and if 
 
 Q12. What is indentation? What's the use of indentaion in Python?
 Indentation is a spaces at the beginning of a code line.
+ indentation to highlight the blocks of code in python.
 
 Q13. How can we throw some output in Python?
-
+by using print();
 Q14. What are operators in Python?
 
+Arithmetic operators (+,-,/,*,%)
+Assignment operators (= , +=,-=,*=)
+Comparison operators (==,>,<,>=,<=)
+Logical operators (and,or,not)
+Identity Operators(is,is not)
+
 Q15. What is difference between / and // operators?
+Both are arithmetic operator
+x = 15
+y = 2
+/ = used in division  , Gives actual rsult e.g print(x/y) = 7.5
+// = this floor division , rounds the result to the nearest whole number e.g print(x//y) = 7 
 
 Q16. Write a code that gives following as an output.
 ```
 iNeuroniNeuroniNeuroniNeuron
 ```
-
+Ans: print('iNeuroniNeuroniNeuroniNeuron');
 Q17. Write a code to take a number as an input from the user and check if the number is odd or even.
+ Ans:
+print("Enter your number:")
+num = input();
+if(int(num) % 2 == 0):
+ print("even")
+else:
+ print("odd")
 
 Q18. What are boolean operator?
 
+operators and,or,not are boolean operators .
+
 Q19. What will the output of the following?
 ```
-1 or 0
+1 or 0 : 1
 
-0 and 0
+0 and 0 : 0
 
-True and False and True
+True and False and True : False
 
-1 or 0 or 0
+1 or 0 or 0 : 1
 ```
 
 Q20. What are conditional statements in Python?
+if,else,
 
 Q21. What is use of 'if', 'elif' and 'else' keywords?
 
+Ans: If the condition for if is False, it checks the condition of the next elif block . if elif is false then it goes to else.
+
 Q22. Write a code to take the age of person as an input and if age >= 18 display "I can vote". If age is < 18 display "I can't vote".
+print("Enter Age:")
+age = input();
+if(int(age) >= 18):
+ print("I can vote")
+else:
+ print("I can't vote")
 
 Q23. Write a code that displays the sum of all the even numbers from the given list.
 ```
 numbers = [12, 75, 150, 180, 145, 525, 50]
 ```
-
+Ans: 
+numbers = [12, 75, 150, 180, 145, 525, 50];
+sumOfEvenNumbers = 0;
+for num in numbers:
+    if(num%2==0):
+        sumOfEvenNumbers = sumOfEvenNumbers + num
+print("sum of even number is:" , sumOfEvenNumbers)
 
 Q24. Write a code to take 3 numbers as an input from the user and display the greatest no as output.
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
+num3 = int(input("Enter third number: "))
+
+if (num1 >= num2) and (num1 >= num3):
+   greatest = num1
+elif (num2 >= num1) and (num2 >= num3):
+   greatest = num2
+else:
+   greatest = num3
+
+print("The greatest number is", greatest)
 
 Q25. Write a program to display only those numbers from a list that satisfy the following conditions
 
@@ -100,3 +148,14 @@ Q25. Write a program to display only those numbers from a list that satisfy the 
 ```
 numbers = [12, 75, 150, 180, 145, 525, 50]
 ```
+numbers = [12, 75, 150, 180, 145, 525, 50]
+
+for nums in numbers:
+    if(nums>500)
+        continue
+    elif(nums>150):
+        continue
+    elif(nums%5==0):
+        print(nums);
+
+o/p: 75 150 145
