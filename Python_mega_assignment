@@ -1,3 +1,94 @@
+Q26. What is a string? How can we declare string in Python?
+String is surrounded by either single quotation marks, or double quotation marks
+e.g str = "i how are you!"
+
+Q27. How can we access the string using its index?
+str = "i how are you!"
+
+print(str[2])
+o/p: h
+
+Q28. Write a code to get the desired output of the following
+
+txt = "Big Data iNeuron"
+
+splTxt = txt.split()
+
+
+for str in splTxt:
+    if(str == 'iNeuron'):
+        print(str)
+Q29. Write a code to get the desired output of the following
+txt = "Big Data iNeuron"
+
+splTxt = txt.split()
+
+strs = ""
+for str in splTxt:
+    if(str == 'iNeuron'):
+        for rev in str:
+            strs = rev + strs
+
+print(strs)   
+
+Q30. Resverse the string given in the above question.
+txt = "Big Data iNeuron"
+
+splTxt = txt.split()
+
+strs = ""
+for str in splTxt:
+    strs = str +" "+ strs
+print(strs) 
+
+Q31. How can you delete entire string at once?
+   txt = "Big Data iNeuron"
+   txt = ''
+   print(txt)
+
+Q32. What is escape sequence?
+   print("Big\tData\tiNeuron")
+
+Q33. How can you print the below string?
+ print("'iNeuron's Big Data Course'")
+
+Q34. What is a list in Python?
+List is built-in data types in Python used to store collections of data and multiple items in a single variable.
+
+Q35. How can you create a list in Python?
+e.g itm = ['test' , 'cricket' , 'dog']
+
+Q36. How can we access the elements in a list?
+ By for loop or by index
+ 
+Q37. Write a code to access the word "iNeuron" from the given list.
+
+lst = [1,2,3,"Hi",[45,54, "iNeuron"], "Big Data"]
+
+print(lst[4][2])
+
+Q38. Take a list as an input from the user and find the length of the list.
+
+lst = []
+
+n = int(input("Enter number of elements : "))
+  
+
+for i in range(0, n):
+    ele = int(input())
+  
+    lst.append(ele)
+print(lst)
+print(len(lst))
+
+Q39. Add the word "Big" in the 3rd index of the given list.
+lst = ["Welcome", "to", "Data", "course"]
+lst[3] = "Big"
+print(lst)
+
+Q40. What is a tuple? How is it different from list?
+
+ 
 
 Q76. Write a Python program to find the factorial of a given number.
 
