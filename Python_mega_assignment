@@ -262,6 +262,12 @@ print("Output : ", str(inputTupleList))
 
 Q96. Write a python program to print below pattern.
 
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+
 def pypart(n):
     myList = []
     for i in range(1,n+1):
@@ -272,6 +278,79 @@ pypart(n)
 
 Q97. Write a python program to print below pattern.
 
+    *
+   **
+  ***
+ ****
+*****
+
+rows = 5
+k = 2 * rows - 2
+for i in range(0, rows):  
+    for j in range(0, k):  
+        print(end=" ")
+    k = k - 2   
+    for j in range(0, i + 1):  
+        print("* ", end="")
+    print("")
+    
+
+Q98. Write a python program to print below pattern.
+
+    * 
+   * * 
+  * * * 
+ * * * * 
+* * * * * 
+
+def triangle(n):
+    k = n - 1
+    for i in range(0, n):
+        for j in range(0, k):
+            print(end=" ")
+        k = k - 1
+        for j in range(0, i+1):
+            print("* ", end="")
+        print("\r")
+
+n = 5
+triangle(n)
+
+Q99. Write a python program to print below pattern.
+1 
+1 2 
+1 2 3 
+1 2 3 4 
+1 2 3 4 5
+
+def pypart(n):
+    num = 1
+    for i in range(0, n):
+        num = 1
+        for j in range(0, i+1):
+            print(num, end=" ")
+            num = num + 1
+        print("\r")
+n = 5
+pypart(n)
+
+Q100. Write a python program to print below pattern.
+    
+def alphapatPypart(n):
+     
+    
+    # ASCII value
+    num = 65
+    for i in range(0, n):
+        for j in range(0, i+1):
+            ch = chr(num)
+            print(ch, end=" ")
+        num = num + 1
+        print("\r")
+ 
+# Driver Code
+n = 5
+alphapatPypart(n)
 
    
  
