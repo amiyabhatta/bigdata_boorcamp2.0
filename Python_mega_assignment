@@ -87,8 +87,53 @@ lst[3] = "Big"
 print(lst)
 
 Q40. What is a tuple? How is it different from list?
-
+Tuple is used to store multiple items .Tuple item is immutable nut list is mmutable.
  
+Q41. How can you create a tuple in Python?
+
+tuple = (1,2,5)
+
+Q42. Create a tuple and try to add your name in the tuple. Are you able to do it? Support your answer with reason.
+
+we can not add name into tuple becuase tuple is immutable.
+
+Q43. Can two tuple be appended. If yes, write a code for it. If not, why?
+
+yes , two tuple can be appended
+tuple1 = (1,2,4)
+tuple2 = ('amiya' , 'bhatt')
+appendTuple = tuple1+tuple2
+print(appendTuple)
+
+Q44. Take a tuple as an input and print the count of elements in it.
+
+tuple2 = ('amiya' , 'bhatt')
+
+print(len(tuple2))
+
+Q45. What are sets in Python?
+Sets are used to store multiple items . A set is a collection which is unordered, unchangeable*, and unindexed.
+e.g sets = {1,2,3}
+
+Q46. How can you create a set?
+e.g sets = set()
+
+Q47. Create a set and add "iNeuron" in your set.
+sets = set()
+sets.add("iNeuron")
+
+Q48. Try to add multiple values using add() function.
+sets = set()
+sets.add("iNeuron")
+sets.add("test")
+sets.add("hi")
+
+Q49. How is update() different from add()?
+add(): it simply add a item
+update() : it wil update a perticualr item if its not avaiable then it will add .
+
+Q50. What is clear() in sets?
+clear all items from sets
 
 Q76. Write a Python program to find the factorial of a given number.
 
