@@ -1,3 +1,164 @@
+Q1. Why do we call Python as a general purpose and high-level programming language?
+
+Ans : general purpose - is a programming language designed 
+to be used for creating software in different types of application, independetnt of hardware configurations and operating systems . 
+high-level programming : Easy to understand , less memory efficient , easy to debug Also can run in any platfrom , needs compiler or interpreter for translation.
+Q2. Why is Python called a dynamically typed language?
+
+Q3. List some pros and cons of Python programming language?
+pros : open source  , easy syntax  , Interpreted Language(run code line by line so if any error occures then it stops) , lots of library support .
+cons : slow speed , Not Memory Efficient (automatically assigns the data type during execution)
+
+Q4. In what all domains can we use Python?
+
+1. Bigdata domain  , web , Machine learning , Artifical Intelegency
+
+Q5. What are variable and how can we declare them?
+
+A varibale is a reserved memory location to strore values
+E.g test=100
+Here "test" is varibale and its value is 100
+
+Q6. How can we take an input from the user in Python?
+Ans: input() 
+e.g input("Enter name:")
+
+Q7. What is the default datatype of the value that has been taken as an input using input() function?
+
+Ans: string
+
+Q8. What is type casting?
+it is method to convert varibale data type into differnet data type.
+e,g # int variable
+      a = 5
+ 
+   # typecast to float
+     n = float(a)
+
+Q9. Can we take more than one input from the user using single input() function? If yes, how? If no, why?
+
+yes , e.g a, b, c = input("Enter three differnt names: ").split()
+
+Q10. What are keywords?
+keywords are reserved words that cannot be used as variable names, function names.
+e.g and , as
+
+Q11. Can we use keywords as a variable? Support your answer with reason.
+No , we can nt use keywords as a variable . Beacause keyword is reserved and if we use it will throw error (SyntaxError: invalid syntax)
+
+Q12. What is indentation? What's the use of indentaion in Python?
+Indentation is a spaces at the beginning of a code line.
+ indentation to highlight the blocks of code in python.
+
+Q13. How can we throw some output in Python?
+by using print();
+Q14. What are operators in Python?
+
+Arithmetic operators (+,-,/,*,%)
+Assignment operators (= , +=,-=,*=)
+Comparison operators (==,>,<,>=,<=)
+Logical operators (and,or,not)
+Identity Operators(is,is not)
+
+Q15. What is difference between / and // operators?
+Both are arithmetic operator
+x = 15
+y = 2
+/ = used in division  , Gives actual rsult e.g print(x/y) = 7.5
+// = this floor division , rounds the result to the nearest whole number e.g print(x//y) = 7 
+
+Q16. Write a code that gives following as an output.
+```
+iNeuroniNeuroniNeuroniNeuron
+```
+Ans: print('iNeuroniNeuroniNeuroniNeuron');
+Q17. Write a code to take a number as an input from the user and check if the number is odd or even.
+ Ans:
+print("Enter your number:")
+num = input();
+if(int(num) % 2 == 0):
+ print("even")
+else:
+ print("odd")
+
+Q18. What are boolean operator?
+
+operators and,or,not are boolean operators .
+
+Q19. What will the output of the following?
+```
+1 or 0 : 1
+
+0 and 0 : 0
+
+True and False and True : False
+
+1 or 0 or 0 : 1
+```
+
+Q20. What are conditional statements in Python?
+if,else,
+
+Q21. What is use of 'if', 'elif' and 'else' keywords?
+
+Ans: If the condition for if is False, it checks the condition of the next elif block . if elif is false then it goes to else.
+
+Q22. Write a code to take the age of person as an input and if age >= 18 display "I can vote". If age is < 18 display "I can't vote".
+print("Enter Age:")
+age = input();
+if(int(age) >= 18):
+ print("I can vote")
+else:
+ print("I can't vote")
+
+Q23. Write a code that displays the sum of all the even numbers from the given list.
+```
+numbers = [12, 75, 150, 180, 145, 525, 50]
+```
+Ans: 
+numbers = [12, 75, 150, 180, 145, 525, 50];
+sumOfEvenNumbers = 0;
+for num in numbers:
+    if(num%2==0):
+        sumOfEvenNumbers = sumOfEvenNumbers + num
+print("sum of even number is:" , sumOfEvenNumbers)
+
+Q24. Write a code to take 3 numbers as an input from the user and display the greatest no as output.
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
+num3 = int(input("Enter third number: "))
+
+if (num1 >= num2) and (num1 >= num3):
+   greatest = num1
+elif (num2 >= num1) and (num2 >= num3):
+   greatest = num2
+else:
+   greatest = num3
+
+print("The greatest number is", greatest)
+
+Q25. Write a program to display only those numbers from a list that satisfy the following conditions
+
+- The number must be divisible by five
+
+- If the number is greater than 150, then skip it and move to the next number
+
+- If the number is greater than 500, then stop the loop
+```
+numbers = [12, 75, 150, 180, 145, 525, 50]
+```
+numbers = [12, 75, 150, 180, 145, 525, 50]
+
+for nums in numbers:
+    if(nums>500)
+        continue
+    elif(nums>150):
+        continue
+    elif(nums%5==0):
+        print(nums);
+
+o/p: 75 150 145
+Footer
 Q26. What is a string? How can we declare string in Python?
 String is surrounded by either single quotation marks, or double quotation marks
 e.g str = "i how are you!"
@@ -233,7 +394,60 @@ print(dic1)
 
 Q63. What is the use of items() function?
 
+item() used in for loop interation for each item.
 
+Q64. What is the use of pop() function?
+pop() used to remove item from list
+
+Q65. What is the use of popitems() function?
+
+popitems() used to remove last item from dictionary
+
+Q66. What is the use of keys() function?
+
+keys() return view object with keys of a dictionary
+
+Q67. What is the use of values() function?
+
+values() return view object with values of a dictionary
+
+Q68. What are loops in Python?
+
+loop is used to iterate through item , dictionary , list . strings
+
+Q69. How many type of loop are there in Python?
+
+for loop , while loop 
+
+Q70. What is the difference between for and while loops?
+
+for: Iterate number of times
+while: iterating until the condition is false
+
+Q71. What is the use of continue statement?
+
+The continue statement is used to end the current iteration in a for loop or a while loop  and continues to the next iteration.
+
+Q72. What is the use of break statement?
+
+The break statement is used to break  a for loop or a while loop.
+
+Q73. What is the use of pass statement?
+
+When the pass statement is used nothing happens . for e.g if we want to keep any condition statement empty and leave blank then it will create error.
+
+if we use pass statement the no error will come.
+
+Q74. What is the use of range() function?
+
+range() function returns a sequence of numbers, starting from 0 by default, and increments by 1 and stops before a specified number.
+
+Q75. How can you loop over a dictionary?
+
+dict1 = {'a': 10, 'b': 8}
+
+ for k,v in dict1.items():
+        print(v)
 
 Q76. Write a Python program to find the factorial of a given number.
 
