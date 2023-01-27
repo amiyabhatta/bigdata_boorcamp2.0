@@ -70,6 +70,14 @@ Q16. Query the list of CITY names from STATION that do not start with vowels and
 Ans: select DISTINCT City from station where LEFT(City , 1) NOT IN ('a', 'e', 'i', 'o', 'u') 
 AND  right(City , 1) NOT IN ('a', 'e', 'i', 'o', 'u') order by City ASC;
 
+Q17. Write an SQL query that reports the products that were only sold in the first quarter of 2019. That is, between 2019-01-01 and 2019-03-31 inclusive.
+
+select p.product_id , p.product_name from product p
+inner join sales sl on sl.product_id = p.product_id where sl.sale_date between '2019-01-01' and '2019-03-31' AND
+p.product_id NOT IN (
+select pr.product_id from product pr inner join sales sl
+on pr.product_id = sl.product_id where sl.sale_date NOT between '2019-01-01' and '2019-03-31');
+
 
 
 
