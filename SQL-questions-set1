@@ -83,7 +83,14 @@ Ans: select author_id as id from views where author_id = viewer_id group by auth
 
 Q19. Write an SQL query to find the percentage of immediate orders in the table, rounded to 2 decimal places.
 
-Ans : select ROUND(count(*) * 100 / (select count(*) from delivery where order_date = customer_pref_delivery_date) , 2) as immediate_percentage from delivery;
+Ans :  s select ROUND((tmp / total_Count)*100,2) as immediate_percentage from
+ (select *,
+ (select count(*) as immediate_percentage_count 
+ from delivery where order_date = customer_pref_delivery_date) as tmp, 
+ count(*) as total_Count
+ from delivery) as avg_percentge;
+ 
+ 
 
 
 
