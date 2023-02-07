@@ -122,6 +122,33 @@ weather w on c.country_id = w.country_id
 where MONTH(w.day) = 11) as tmp
 group by country_name order by weather_state;
 
+Q.23 Write an SQL query to find the average selling price for each product. average_price should be rounded to 2 decimal places.
+
+Ans :
+select product_id,round((total_price / total_product) , 2) as average_price
+    from
+    (select p.product_id,
+    sum(p.price*u.units) over(partition by p.product_id) as total_price,
+    sum(u.units) over(partition by p.product_id) as total_product
+    from Prices p inner join unitssold u
+	on p.product_id = u.product_id
+    where p.start_date <= u.purchase_date AND p.end_date >= u.purchase_date
+    ) as tmp group by product_id;
+    
+ Q24: Write an SQL query to report the first login date for each player.
+
+Ans: 
+select player_id,event_date as first_login 
+from activity group by player_id;
+
+Q25:Write an SQL query to report the device that is first logged in for each player
+
+Ans: select player_id,device_id
+from activity group by player_id;
+
+
+ 
+
  
  
 
