@@ -90,6 +90,19 @@ Ans :  s select ROUND((tmp / total_Count)*100,2) as immediate_percentage from
  count(*) as total_Count
  from delivery) as avg_percentge;
  
+ Q20. Write an SQL query to find the ctr of each Ad. Round ctr to two decimal points.
+ Ans : 
+ select c.ad_id , round(c.total_clicked/(c.total_clicked+v.total_viewed)* 100 , 2)  as ctr
+from
+(select ad_id,count(*) as total_clicked 
+from ads where action IN('clicked')  group by ad_id) as c
+INNER JOIN (
+select ad_id,count(*) as total_viewed from ads where action IN('viewed')  group by ad_id
+) as v
+on c.ad_id = v.ad_id order by ctr desc , c.ad_id asc;
+
+Q21.
+ 
  
 
 
