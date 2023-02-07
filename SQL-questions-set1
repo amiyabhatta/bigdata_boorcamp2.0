@@ -138,13 +138,18 @@ select product_id,round((total_price / total_product) , 2) as average_price
  Q24: Write an SQL query to report the first login date for each player.
 
 Ans: 
-select player_id,event_date as first_login 
-from activity group by player_id;
+select player_id , event_date from
+(select *,row_number() over(partition by player_id order by event_date) as first_login
+from activity) as tmp
+where first_login = 1;
 
 Q25:Write an SQL query to report the device that is first logged in for each player
 
-Ans: select player_id,device_id
-from activity group by player_id;
+Ans: select player_id , device_id from
+(select *,row_number() over(partition by player_id order by event_date) as first_login
+from activity) as tmp
+where first_login = 1;
+
 
 
  
