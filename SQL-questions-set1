@@ -150,6 +150,16 @@ Ans: select player_id , device_id from
 from activity) as tmp
 where first_login = 1;
 
+Q26.Write an SQL query to get the names of products that have at least 100 units ordered in February 2020 and their amount.
+
+Ans: select p.product_name , sum(unit) as unit
+from orders o
+INNER JOIN products p
+on p.product_id = o.product_id
+where o.order_date between '2020-02-01' AND '2020-02-28' group by p.product_id 
+HAVING sum(o.unit) >= 100;
+
+
 
 
  
