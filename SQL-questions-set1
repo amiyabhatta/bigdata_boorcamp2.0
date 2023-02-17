@@ -159,6 +159,25 @@ on p.product_id = o.product_id
 where o.order_date between '2020-02-01' AND '2020-02-28' group by p.product_id 
 HAVING sum(o.unit) >= 100;
 
+Q27. Write an SQL query to find the users who have valid emails
+
+Ans:SELECT user_id,name,mail FROM users where mail REGEXP '^[a-zA-Z0-9][a-zA-Z0-9._-]*@[a-zA-Z0-9][a-zA-Z0-9._-]*\\.[a-zA-Z]{2,4}$' 
+AND mail LIKE '%@leetcode.com';
+
+Q28. Write an SQL query to report the customer_id and customer_name of customers who have spent at least $100 in each month of June and July 2020.
+
+Ans: select customer_id,name from
+(select cu.name,ord.customer_id , ord.product_id , ord.order_date , ord.quantity , pr.price , sum(ord.quantity * pr.price) as total_spent from ordernew ord 
+inner join 
+products_new pr on ord.product_id = pr.product_id 
+inner join 
+customers cu on cu.customer_id = ord.customer_id
+where Month(ord.order_date) IN (6,7) group by Month(order_date) , customer_id
+) as all_details 
+where total_spent >= 100 group by customer_id having COUNT(customer_id) = 2;
+
+Q29. Write an SQL query to report the distinct titles of the kid-friendly movies streamed in June 2020.
+
 
 
 
