@@ -177,15 +177,70 @@ where Month(ord.order_date) IN (6,7) group by Month(order_date) , customer_id
 where total_spent >= 100 group by customer_id having COUNT(customer_id) = 2;
 
 Q29. Write an SQL query to report the distinct titles of the kid-friendly movies streamed in June 2020.
-Ans : select cn.title from content cn
+Ans : select DISTINCT cn.title from content cn
 	inner join tv_program as tv
 	on cn.content_id = tv.content_id
 	where cn.kids_content = 'Y' AND cn.content_type = 'Movies'
 	AND tv.program_date between '2020-06-01' AND '2020-06-31';
+	
+Q30. Write an SQL query to find the npv of each query of the Queries table.
+
+Ans : SELECT DISTINCT nv.id,nv.year,nv.npv
+FROM queries qr INNER JOIN npv nv
+ON nv.id = qr.id AND nv.year = qr.year;
+
+Q32.  Write an SQL query to show the unique id of each user, If a user does not have a unique id replace just show null.
+
+Ans: select un.unique_id , em.name
+from employees_uni un right join employees em
+on un.id = em.id order by un.unique_id;
+
+Q33. Write an SQL query to report the distance travelled by each user. Return the result table ordered by travelled_distance in descending order, if two or more users travelled the same distance, order them by their name in ascending order
+
+Ans : select us.name,sum(IFNULL(ri.distance, 0)) as travel_distance
+from users us left join rides ri 
+on us.id = ri.user_id
+group by us.id
+order by travel_distance desc , us.name asc;
+
+Q.34 SAME AS 26
+
+Q35. Find the name of the user who has rated the greatest number of movies. In case of a tie, return the lexicographically smaller user name.
+
+Ans : select us.name from
+users us
+inner join movie_rating mr
+on us.user_id = mr.user_id group by us.name
+order by count(mr.rating) desc,length(us.name) asc limit 1;
+
+   Find the movie name with the highest average rating in February 2020. In case of a tie, return the lexicographically smaller movie name
 
 
+ select 
+	mv.title
+from movies mv
+inner join movie_rating mr
+on mv.movie_id = mr.movie_id 
+where year(mr.created_at) = '2020' AND month(mr.created_at) = '02'
+group by mv.title order by avg(mr.rating) desc,mv.title asc limit 1;
 
- 
+Q.36 SAME AS 33
+Q.37 SAME AS 32
+
+Q.38 Write an SQL query to find the id and the name of all students who are enrolled in departments that no longer exist.
+
+ANS : select id,name from
+(select st.id , st.name , dp.name as depat_name
+from students st 
+left join departments dp
+on st.department_id = dp.id) as stu_details
+where depat_name IS NULL;
+
+Q39. Q.39 Write an SQL query to report the number of calls and the total call duration between each pair of 
+distinct persons (person1, person2) where person1 < person2. Return the result table in any order.
+
+Ans:
+
 
  
  
